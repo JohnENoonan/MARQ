@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <title>User Input</title>
+</head>
+
+<body>
+  <h1 align="center">Please Enter Information</h1>
+  <div align="center">
+    <form id="playerInfo">
+      <div>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="playerName">
+      </div>
+      <div>
+          <label for="Team Name">Team Name:</label>
+          <input type="text" id="teamName" name="teamName">
+      </div>
+      <div>
+        <label for="Role">Team Role:</label>
+        <select name="role" id="role">
+          <option value="" disabled selected>Select your role in your team</option>
+          <option value="Technologist">Technologist</option>
+          <option value="Designer">Designer</option>
+          <option value="Economist">Economist</option>
+          <option value="Social_Scientist">Social Scientist</option>
+        </select>
+      </div>
+      <div>
+        <input type="submit" value="Submit" id="submit" onclick="saveInfo(); return false;">
+      </div>
+    </form>
+  </div>
+  <span id="test"></span>
+  <script>
+    function saveInfo() {
+      localStorage.setItem("pname", document.getElementById("name").value);
+      localStorage.setItem("tname", document.getElementById("teamName").value);
+      localStorage.setItem("role", document.getElementById("role").value);
+      sp = document.getElementById("test");
+      sp.innerHTML = localStorage.getItem("pname");
+      window.location.href = "../index.html";
+      return false;
+    }
+  </script>
+
+
+</body>
+
+</html>
