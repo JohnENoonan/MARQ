@@ -10,12 +10,12 @@
   <div align="center">
     <form id="playerInfo">
       <div>
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="playerName">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="playerName">
       </div>
       <div>
-          <label for="Team Name">Team Name:</label>
-          <input type="text" id="teamName" name="teamName">
+        <label for="Team Name">Team Name:</label>
+        <input type="text" id="teamName" name="teamName">
       </div>
       <div>
         <label for="Role">Team Role:</label>
@@ -32,20 +32,13 @@
       </div>
     </form>
   </div>
-  <span id="test"></span>
   <script>
-    function saveInfo() {
-      localStorage.setItem("pname", document.getElementById("name").value);
-      localStorage.setItem("tname", document.getElementById("teamName").value);
-      localStorage.setItem("role", document.getElementById("role").value);
-      sp = document.getElementById("test");
-      sp.innerHTML = localStorage.getItem("pname");
-      window.location.href = "../index.html";
-      return false;
-    }
+    var p = localStorage.getItem("player");
+    console.log(p);
   </script>
-
-
+  <script src="../scripts/player.js"></script>
+  <!-- script to write player info as JSON to localStorage -->
+  <script src="../scripts/savePlayerInfo.js"></script>
 </body>
 
 </html>
