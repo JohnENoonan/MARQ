@@ -1,0 +1,166 @@
+html,
+body {
+  font-family: 'Oswald', sans-serif;
+  font-size: 14pt;
+  color: #191919;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+/* navbar */
+.dropbtn {
+    background-color: #3498DB;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.dropbtn img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #2980B9;
+}
+
+.dropdown {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 9%;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    width : 100%;
+    overflow: auto;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.show {display:block;}
+
+/* question elements */
+#questionDiv{
+  margin: auto;
+  width: 60%;
+  border: 3px solid #73AD21;
+  padding: 10px;
+}
+#submit{
+
+}
+
+/* div contains img and repeat */
+#topDiv{
+  position: absolute;
+  left:0;
+  margin-left: 10%;
+  padding-top: 30%;
+  width:80%;
+  height:150px;
+}
+/* container for repeat*/
+/*TODO maybe it sould store an image */
+#repeatDiv{
+  width: 100%;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  float:right;
+}
+#textImgContainer {
+  width: 80%;
+  /* TODO make this modular */
+  height: 150px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  margin-left: 10%;
+  /* background: aqua; */
+  /* margin-left: 10%; */
+  padding: 10px;
+}
+
+/* container for dialogue text*/
+#textDiv {
+  background-color:powderblue;
+  /* height: auto; */
+
+  height: 100%;
+  padding-left: 30%;
+  width: auto;
+}
+/* container for all dialogue aspects (text, image,repeat)*/
+#diaWrapper{
+  /* word-wrap: break-word; */
+  width: 30%;
+  height: auto;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 3%;
+  padding-bottom: 25px;
+  /* padding-left: 10%; */
+  padding-right: 10%;
+}
+
+/* image used TODO update dimensions */
+#diaImg {
+  max-width: 100%;
+  height: auto;
+  bottom:0;
+  position: absolute;
+  float:left;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome and Opera */
+}
+/* text inside textDiv*/
+#diaText {
+  /* position: fixed; */
+  /* max-width:100%; */
+  max-height:80%;
+  font-size: 14pt;
+  margin-left: auto;
+  padding:10px 5px 15px 20px;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently*/
+}
+/* Modal overwrite */
+.modal-dialog {
+  width: 90%;
+  height: 90%;
+  margin: auto;
+  padding: 0;
+}
+
+.modal-content {
+  height: auto;
+  min-height: 100%;
+  border-radius: 0;
+}
