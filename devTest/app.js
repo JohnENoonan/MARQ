@@ -57,6 +57,15 @@ class Dialogue {
     numform.innerHTML = 'Answer here: <input type="number" name="value" id="numInput">' +
                         '<button type="button" id="submit">Submit</button>';
     qdiv.appendChild(numform);
+    // when people hit enter validate, do not resubmit
+    $(document).ready(function() {
+      $(window).keydown(function(event){
+        if(event.keyCode == 13) {
+          event.preventDefault();
+          document.getElementById("submit").click();
+        }
+      });
+    });
     // validate answer
     document.getElementById("submit").addEventListener("click",
       function(){
@@ -68,17 +77,13 @@ class Dialogue {
           repeatDiv.hidden = true;
           document.getElementById("questionDiv").hidden = true;
         }
+        else{
+          $("#numInput").blur(); // close soft keyboard
+          textP.innerHTML = dia.data[dia.index].wrong;
+          document.getElementById("numInput").value = "";
+        }
       },
       false);
-    // on enter also validate
-    document.getElementById("numInput").addEventListener("keyup", function(event) {
-      // on enter
-      if (event.keyCode === 13) {
-        event.preventDefault();
-        // Trigger the button element with a click
-        document.getElementById("submit").click();
-      }
-    });
   }
 
   handleTextQ(){
@@ -124,12 +129,6 @@ class Dialogue {
         }
       }
     }
-    // if on question don't move on until correct question
-
-    // if (this.index + 1 < this.data.length){++this.index;}
-    // else {
-    //
-    // }
   }
 }
 
